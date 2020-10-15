@@ -5,8 +5,8 @@ on:                     # トリガーの設定
 
 jobs:
   FTP-Deploy-Action:
-    name: FTP-Deploy-Action     # JOBの名前
-    runs-on: ubuntu-latest      # 仮想環境の種類を指定
+    name: FTP-Deploy-Action
+    runs-on: ubuntu-latest
      steps:
       - uses: actions/checkout@master   # リポジトリのデータを仮想環境にチェックアウトしてくるアクションを実行する
 
