@@ -1,13 +1,13 @@
-on:                     # トリガーの設定
+on:
   push:                 # プッシュした時に実行
     branches:           # ブランチを指定
-      - master    # masterブランチ
-
+      - feature/test    # feature/testブランチ
+name: Build and Deploy  # アクションの名称
 jobs:
   FTP-Deploy-Action:
-    name: FTP-Deploy-Action
-    runs-on: ubuntu-latest
-     steps:
+    name: FTP-Deploy-Action     # JOBの名前
+    runs-on: ubuntu-latest      # 仮想環境の種類を指定
+    steps:
       - uses: actions/checkout@master   # リポジトリのデータを仮想環境にチェックアウトしてくるアクションを実行する
 
       - name: Use Node.js 14.4.0
@@ -21,10 +21,10 @@ jobs:
           npm run generate --if-present   # npm run generate のコマンドを実行する
 
       - name: List output files
-        run: ls                           # ファイルリストを表示
+        run: ls
 
       - name: FTP-Deploy-Action
-        uses: SamKirkland/FTP-Deploy-Action@3.0.0   # FTPを使ってサーバーにDeployするアクションを実行
+        uses: SamKirkland/FTP-Deploy-Action@2.0.0   # FTPを使ってサーバーにDeployするアクションを実行
         env:                                        # FTP環境の設定を行う
           FTP_SERVER: users315.lolipop.jp     # FTPサーバーのURLを設定
           FTP_USERNAME: chu.jp-donguri # FTPのユーザー名を設定
