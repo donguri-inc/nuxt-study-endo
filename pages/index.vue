@@ -1,7 +1,7 @@
 <template lang="pug">
 .container
   div
-    p test2
+    p 自動ビルド
     div(v-for="post in posts")
       h1 {{ post.title.rendered }}
       .content(v-html="post.content.rendered")
