@@ -1,4 +1,4 @@
-# NuxtStudy
+# nuxt-study-endo
 
 ## Build Setup
 
