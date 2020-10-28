@@ -2,11 +2,11 @@
 #   push:                 # プッシュした時に実行
 #     branches:           # ブランチを指定
 #       - master    # feature/testブランチ
-
+name: build
 on:
   repository_dispatch:
     types: [build]
-name: Build and Deploy  # アクションの名称
+# name: Build and Deploy  # アクションの名称
 jobs:
   FTP-Deploy-Action:
     name: FTP-Deploy-Action     # JOBの名前
